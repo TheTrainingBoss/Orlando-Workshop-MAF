@@ -14,7 +14,7 @@
 
 Welcome! This repository has the code for the workshop. During the day we'll go through about 22 hands-on labs, starting with a single call to a language model and ending with multi-agent workflows. Each lab starts with a short demo. Then you'll have time to run the code, change it, and try your own ideas.
 
-> **Note:** This repository contains all 43+ examples from the full course, [**Mastering Microsoft Agent Framework in C#**](https://thetrainingboss.com/course/microsoft-agent-framework-fundamentals-csharp/). The workshop covers the labs listed in the [agenda](#workshop-agenda). The other projects are optional, so you can explore them on your own after the workshop.
+> **Note:** This repository contains all 46+ examples from the full course, [**Mastering Microsoft Agent Framework in C#**](https://thetrainingboss.com/course/microsoft-agent-framework-fundamentals-csharp/). The workshop covers the labs listed in the [agenda](#workshop-agenda). The other projects are optional, so you can explore them on your own after the workshop.
 
 ---
 
@@ -159,7 +159,7 @@ Open `TTB-AgentFramework-csharp.sln` in Visual Studio, or open the folder in VS 
 
 ### 3. Configure your secrets
 
-Most labs read their settings from **.NET User Secrets**, so your keys stay out of source control. The workshop projects use two shared User Secrets IDs, so you only need to set each value **twice** (once per ID):
+Most labs read their settings from **.NET User Secrets**, so your keys stay out of source control. All workshop projects that use User Secrets share the ID `Orlando-Workshop-MAF`, so you only need to set each value **once**:
 
 | Key | Used for |
 |---|---|
@@ -172,20 +172,15 @@ Most labs read their settings from **.NET User Secrets**, so your keys stay out 
 Run these commands from the repository root:
 
 ```bash
-# Shared by labs 02, 10, 11, 13, 14, 15, 16, 18, 24b, 24c, 27, 34, 36
-dotnet user-secrets set "endpoint" "<your-endpoint>" --id 1a482776-e7c1-4dfa-9179-40743b66d232
-dotnet user-secrets set "apikey" "<your-api-key>" --id 1a482776-e7c1-4dfa-9179-40743b66d232
-dotnet user-secrets set "openaikey" "<your-openai-key>" --id 1a482776-e7c1-4dfa-9179-40743b66d232
-dotnet user-secrets set "cosmosdbEndpoint" "<your-cosmos-endpoint>" --id 1a482776-e7c1-4dfa-9179-40743b66d232
-dotnet user-secrets set "cosmosdbKey" "<your-cosmos-key>" --id 1a482776-e7c1-4dfa-9179-40743b66d232
-
-# Shared by labs 24, 25, 26, 28, 29
-dotnet user-secrets set "endpoint" "<your-endpoint>" --id 8fc8b1d7-b2a5-4c0e-b621-c141e4037f31
-dotnet user-secrets set "apikey" "<your-api-key>" --id 8fc8b1d7-b2a5-4c0e-b621-c141e4037f31
-dotnet user-secrets set "openaikey" "<your-openai-key>" --id 8fc8b1d7-b2a5-4c0e-b621-c141e4037f31
-dotnet user-secrets set "cosmosdbEndpoint" "<your-cosmos-endpoint>" --id 8fc8b1d7-b2a5-4c0e-b621-c141e4037f31
-dotnet user-secrets set "cosmosdbKey" "<your-cosmos-key>" --id 8fc8b1d7-b2a5-4c0e-b621-c141e4037f31
+# Shared by all labs that use User Secrets
+dotnet user-secrets set "endpoint" "<your-endpoint>" --id Orlando-Workshop-MAF
+dotnet user-secrets set "apikey" "<your-api-key>" --id Orlando-Workshop-MAF
+dotnet user-secrets set "openaikey" "<your-openai-key>" --id Orlando-Workshop-MAF
+dotnet user-secrets set "cosmosdbEndpoint" "<your-cosmos-endpoint>" --id Orlando-Workshop-MAF
+dotnet user-secrets set "cosmosdbKey" "<your-cosmos-key>" --id Orlando-Workshop-MAF
 ```
+
+The ID names the secrets store, not the file: on Windows, .NET stores the values in `%APPDATA%\Microsoft\UserSecrets\Orlando-Workshop-MAF\secrets.json`. Values saved under the previous GUID-based IDs are not moved automatically; set them again using the new ID.
 
 A few labs need values entered directly in `Program.cs`:
 
