@@ -40,7 +40,6 @@ Console.WriteLine("Reasoning Token Count: " + response.Usage?.ReasoningTokenCoun
 ChatClientAgent agentwithreasoningeffort = client
         .GetChatClient("gpt-5")
         .AsAIAgent(
-            //reasoningEffortLevel: ReasoningEffortLevel.Low  //Yeah no, not that easy :) 
             options: new ChatClientAgentOptions
             {
                 ChatOptions = new ChatOptions
