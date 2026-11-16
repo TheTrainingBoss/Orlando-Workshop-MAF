@@ -45,12 +45,7 @@ ChatClientAgent agentwithreasoningeffort = client
             {
                 ChatOptions = new ChatOptions
                 {
-#pragma warning disable OPENAI001
-                    RawRepresentationFactory = _ => new ChatCompletionOptions
-                    {
-                        ReasoningEffortLevel = ChatReasoningEffortLevel.High,                         
-                    }
-#pragma warning restore OPENAI001
+                    Reasoning = new() {Effort = ReasoningEffort.High} 
                 }
             }
         );
