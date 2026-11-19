@@ -116,7 +116,7 @@ The times below are a guide. We'll adjust the pace to the room.
 ### Required
 
 - **Your own laptop** (Windows, macOS or Linux).
-- **[.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)**. All projects target `net10.0`.
+- **[.NET 11 SDK](https://dotnet.microsoft.com/download/dotnet/11.0)**. All projects target `net10.0`.
 - **Visual Studio 2026** or **Visual Studio Code** with the [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit).
 - **[Git](https://git-scm.com/downloads)**.
 - **An Azure subscription** with access to [Microsoft Foundry](https://ai.azure.com) and the following model deployments:
@@ -137,7 +137,7 @@ The times below are a guide. We'll adjust the pace to the room.
 ### Verify your setup
 
 ```bash
-dotnet --version   # should report 10.x
+dotnet --version   # should report 11.x
 git --version
 az account show    # confirms you are signed in to Azure
 ```
